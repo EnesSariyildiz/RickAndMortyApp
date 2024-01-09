@@ -1,0 +1,26 @@
+﻿@Model List<RickAndMortApp.Models.EpisodeService>
+
+    @{
+        ViewData["Title"] = "EpisodeDetails";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h1 class="text mb-5">EpisodeDetails</h1>
+
+    <a asp-controller="Home" asp-action="Index">
+        <button class="btn btn-outline-danger mb-4">Back To Characters</button>
+    </a>
+
+    <div class="col mb-4">
+        <div class="card cardCss">
+            <div class="g-0">
+                <div class="card-body">
+                    <h1 class="card-title h4 " id="Name">The name of the episode:@Model.Name</h1>
+                    <h6 class="">The id of the episode: @Model.Id</h6>
+                    <h6 class="">The code of the episode: @Model.episode</h6>
+                    <h6 class="">Created Date: @Model.created</h6>
+                    <h6 class="">Link to the episode's:  <a href="@Model.url" class="custom-link" target="_blank">www.RickAndMorty.Com</a></h6>
+                </div>
+            </div>
+        </div>
+    </div>

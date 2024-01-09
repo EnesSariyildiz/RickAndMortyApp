@@ -1,0 +1,23 @@
+﻿@Model List<RickAndMortApp.Models.EpisodeService>
+
+    <h1 class="text mb-5">Rick and Morty Episodes</h1>
+
+    <div class="row">
+        @foreach (var episode in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card cardCss">
+                    <div class="card-body")">
+                        <a href="@Url.Action("EpisodeDetails", "Home", new { id = episode.Id })">
+                            <h1 class="h4 card-title titleName">@episode.Name</h1>
+                        </a>
+                        <h1 class="h6 card-subtitle mb-2 prop">Episode: @episode.Id</h1>
+                       @*  <img src="@episode.Image" alt="@episode.Image" class="card-img" id="Image" /> *@
+                        <div id="episodeDetails_@episode.Id"></div>
+                        
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+

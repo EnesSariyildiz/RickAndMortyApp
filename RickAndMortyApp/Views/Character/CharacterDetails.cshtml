@@ -1,0 +1,31 @@
+﻿@Model List<RickAndMortyApp.Services.CharacterService>
+
+    @{
+        ViewData["Title"] = "CharacterDetails";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h1 class="text mb-5">Character Details</h1>
+
+    <a asp-controller="Character" asp-action="Index">
+        <button class="btn btn-outline-danger mb-4">Back To Characters</button>
+    </a>
+    <div class="col mb-4">
+        <div class="card cardCss">
+            <div class="row g-0">
+                <div class="col-auto p-2">
+                    <img src="@Model.Image" alt="@Model.Image" class="card-img" style="max-width: 600px; max-height: 600px; width: auto; height: auto;" />
+                </div>
+                <div class="col">
+                    <div class="card-body">
+                        <h4 class="card-title" id="Name">Name: @Model.Name</h4>
+                        <h6 class="">Status: @Model.Status</h6>
+                        <h6 class="">Gender: @Model.Gender</h6>
+                        <h6 class="">Species: @Model.Species</h6>
+                        <h6 class="">Created: @Model.Created</h6>
+                        <h6 class="">Link to the character's:  <a href="@Model.Url" class="custom-link" target="_blank">www.RickAndMorty.Com</a></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
